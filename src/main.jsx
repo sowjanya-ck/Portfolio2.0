@@ -1,11 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import emailjs from "@emailjs/browser";
 import {
   ArrowUpRight,
-  BriefcaseBusiness,
-  Code2,
-  Database,
   Download,
   Github,
   GraduationCap,
@@ -14,7 +11,6 @@ import {
   Menu,
   Moon,
   Send,
-  Server,
   Sparkles,
   Sun,
   X,
@@ -31,46 +27,15 @@ const navItems = [
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
 
-const focusAreas = [
-  {
-    icon: Code2,
-    title: "Interface Development",
-    detail: "React, JavaScript, HTML, CSS, responsive layouts",
-  },
-  {
-    icon: Server,
-    title: "Application Logic",
-    detail: "Node.js, Express, Python, Flask, Django, Rails",
-  },
-  {
-    icon: Database,
-    title: "Data Foundations",
-    detail: "SQL, DBMS, OOP, Java, C++, problem solving",
-  },
-];
-
-const skillLogos = [
-  { name: "HTML5", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { name: "JavaScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Stimulus", image: "https://cdn.simpleicons.org/stimulus/77E8B9" },
-  { name: "Shopify", image: "https://cdn.simpleicons.org/shopify/7AB55C" },
-  { name: "Node.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Express", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-  { name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  { name: "Flask", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
-  { name: "Django", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
-  { name: "Ruby on Rails", image: "https://cdn.simpleicons.org/rubyonrails/CC0000" },
-  { name: "PostgreSQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-  { name: "MySQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-  { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-  { name: "Java", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "C++", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
-  { name: "Git", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+const skillGroups = [
+  { title: "Frontend", items: ["React", "JavaScript", "HTML", "CSS", "Responsive UI"] },
+  { title: "Backend", items: ["Node.js", "Express", "Python", "Django", "Flask", "Ruby on Rails"] },
+  { title: "Data", items: ["PostgreSQL", "MySQL", "MongoDB", "SQL"] },
+  { title: "AI-enabled workflow", items: ["AI-assisted coding", "Prompting and iteration", "Code review support", "Machine learning fundamentals"] },
 ];
 
 const projects = [
@@ -133,11 +98,6 @@ function App() {
   const [emailModalOpen, setEmailModalOpen] = useState(false);
   const [emailStatus, setEmailStatus] = useState("");
   const [emailForm, setEmailForm] = useState({ name: "", subject: "", message: "" });
-
-  const featuredTags = useMemo(
-    () => Array.from(new Set(projects.flatMap((project) => project.tags))).slice(0, 12),
-    []
-  );
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -225,15 +185,12 @@ function App() {
       <main>
         <header className="hero page-shell" id="home">
           <section className="hero-copy">
-            <p className="hello">Hi, I'm Sowjanya.</p>
-            <h1>I design, develop, and deliver software solutions that solve real-world business challenges.</h1>
+            <p className="hello">Software Developer | Bengaluru, India</p>
+            <h1>I build reliable software that makes everyday work simpler.</h1>
             <p className="hero-text">
-              With experience across frontend interfaces, backend systems, APIs, databases, and application
-              architecture, I enjoy building products that are both functional and scalable.
-            </p>
-            <p className="hero-text">
-              My toolkit includes React, JavaScript, Python, Node.js, Django, Flask, Rails, and SQL, enabling
-              me to transform ideas into reliable and efficient applications.
+              I am Sowjanya Kumari, a software developer at Dayspring. I work across application interfaces,
+              backend logic, and data, and use AI tools to explore solutions and move through implementation
+              faster, with review and engineering judgment in the loop.
             </p>
             <div className="social-row">
               <a href="https://github.com/sowjanya-ck" target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -258,17 +215,32 @@ function App() {
             </div>
           </section>
 
-          <section className="hero-visual" aria-label="Developer illustration">
-            <div className="profile-orbit">
-              <img src="/assets/me.png" alt="Sowjanya Kumari" />
-              <div className="orbit-card top">
-                <Sparkles size={18} />
-                Software Developer
+          <section className="hero-visual" aria-label="Animated software workspace with connected app components">
+            <div className="flow-scene">
+              <svg className="flow-wires" viewBox="0 0 480 440" aria-hidden="true">
+                <path d="M82 122 C130 122 138 153 174 166 S239 161 278 136 S347 112 391 126" />
+                <path d="M88 297 C140 297 148 263 184 249 S258 255 292 283 S347 318 395 303" />
+                <circle cx="174" cy="166" r="4" /><circle cx="292" cy="283" r="4" />
+              </svg>
+              <div className="flow-panel panel-code">
+                <div className="flow-panel-head"><span className="panel-dot" /> logic.js <span className="panel-live">LIVE</span></div>
+                <div className="mini-code"><i>01</i><b>function</b> buildApp()<br /><i>02</i>&nbsp; return <em>"ready"</em><br /><i>03</i>{'}'} <span className="typing-caret" /></div>
               </div>
-              <div className="orbit-card bottom">
-                <BriefcaseBusiness size={18} />
-                Dayspring
+              <div className="flow-main">
+                <div className="flow-panel-head"><div className="brand-mark">S</div> Project overview <span className="menu-dots">•••</span></div>
+                <div className="dashboard-body">
+                  <div className="dash-sidebar"><span /><span /><span /><span /></div>
+                  <div className="dash-content">
+                    <div className="dash-welcome">Good work, <b>team</b><small>Your project is taking shape.</small></div>
+                    <div className="dash-stats"><div><small>Progress</small><b>78%</b><span className="progress-track"><i /></span></div><div><small>Tasks</small><b>12</b><span className="stat-bars"><i /><i /><i /><i /><i /><i /><i /></span></div></div>
+                    <div className="dash-chart"><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /></div>
+                    <div className="dash-bottom"><i /><i /><i /></div>
+                  </div>
+                </div>
               </div>
+              <div className="flow-node node-api"><span className="node-icon">API</span><b>API</b><small>connected</small><i /></div>
+              <div className="flow-node node-data"><span className="node-icon">DB</span><b>Data</b><small>in sync</small><i /></div>
+              <span className="flow-note">Design · Build · Improve</span>
             </div>
           </section>
         </header>
@@ -278,51 +250,29 @@ function App() {
             <p className="eyebrow">Technical Stack</p>
             <h2>Tools and fundamentals I use to build complete applications.</h2>
           </div>
-          <div className="what-i-do">
-            <div className="skill-visual" aria-hidden="true">
-              <div className="screen-card">
-                <div className="screen-dots">
-                  <span />
-                  <span />
-                  <span />
+          <div className="skill-groups">
+            {skillGroups.map((group) => (
+              <article className="skill-group" key={group.title}>
+                <h3>{group.title}</h3>
+                <div className="chip-row">
+                  {group.items.map((item) => <span key={item}>{item}</span>)}
                 </div>
-                <code>const developer = "Sowjanya";</code>
-                <code>developer.solve(["frontend", "backend", "data"]);</code>
-                <code>developer.create(["apps", "systems", "workflows"]);</code>
-                <div className="focus-bands">
-                  {focusAreas.map(({ icon: Icon, title, detail }) => (
-                    <div className="focus-band" key={title}>
-                      <Icon size={18} />
-                      <div>
-                        <strong>{title}</strong>
-                        <span>{detail}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="logo-cloud" aria-label="Technology skills">
-            {skillLogos.map((skill, index) => (
-                <article className="logo-tile" style={{ animationDelay: `${index * 80}ms` }} key={skill.name}>
-                  <img src={skill.image} alt={`${skill.name} logo`} aria-label={skill.name} loading="lazy" />
-                  <span className="skill-tooltip" aria-hidden="true">{skill.name}</span>
-                </article>
-              ))}
-          </div>
-          <div className="tech-strip">
-            {featuredTags.map((tag) => (
-              <span key={tag}>{tag}</span>
+              </article>
             ))}
           </div>
+          <aside className="ai-note">
+            <Sparkles size={21} />
+            <div>
+              <h3>AI is part of my everyday toolkit</h3>
+              <p>I use AI to explore approaches and move through implementation faster, while keeping code review, testing, and engineering judgment in the loop.</p>
+            </div>
+          </aside>
         </section>
 
         <section className="section page-shell" id="experience">
           <div className="section-heading">
             <p className="eyebrow">Work Experience</p>
-            <h2>Current role and hands-on development work.</h2>
+            <h2>Building and improving software with a product-minded team.</h2>
           </div>
           <article className="experience-card">
             <div className="company-mark">D</div>
@@ -332,12 +282,12 @@ function App() {
                   <h3>Software Developer</h3>
                   <p>Dayspring</p>
                 </div>
-                <span>Current Role</span>
+                <span>Current</span>
               </div>
               <ul>
-                <li>Develop application features that support clear user flows, responsive screens, and reliable interactions.</li>
-                <li>Contribute to frontend, backend, database, debugging, and integration tasks in a professional team environment.</li>
-                <li>Use programming fundamentals and web technologies to improve real software used in day-to-day workflows.</li>
+                <li>Contribute to end-to-end feature delivery, from understanding requirements through implementation and refinement.</li>
+                <li>Work across UI, application logic, APIs, and data while debugging issues and collaborating with teammates.</li>
+                <li>Use company-approved AI tools to accelerate exploration and coding, then validate and refine the results.</li>
               </ul>
             </div>
           </article>
@@ -381,7 +331,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section page-shell education-section">
+        <section className="section page-shell education-section" id="education">
           <div className="section-heading">
             <p className="eyebrow">Education</p>
             <h2>Academic background.</h2>
@@ -423,7 +373,7 @@ function App() {
       </main>
 
       <footer className="footer page-shell">
-        <p>Copyright Â© 2026 Sowjanya Kumari</p>
+        <p>Copyright (c) 2026 Sowjanya Kumari</p>
         <p>All rights reserved.</p>
       </footer>
 
