@@ -2553,3 +2553,15 @@ h3 {
     margin-inline: auto;
   }
 }
+
+/* Match the reference's illustration-first hero composition. */
+.hero {
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+}
+.hero-visual { order: -1; }
+.hero-copy { order: 1; }
+@media (max-width: 740px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; }
+  .hero-copy { order: 0; }
+}
