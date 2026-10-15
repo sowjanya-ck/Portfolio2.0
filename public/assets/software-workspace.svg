@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" fill="none">
+  <defs>
+    <linearGradient id="backdrop" x1="35" y1="20" x2="442" y2="412" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F6F1"/><stop offset=".58" stop-color="#EEEBF5"/><stop offset="1" stop-color="#E7EEE8"/>
+    </linearGradient>
+    <linearGradient id="card" x1="170" y1="115" x2="375" y2="362" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFEFA"/><stop offset="1" stop-color="#F7F5FC"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#322D53" flood-opacity=".14"/>
+    </filter>
+    <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#322D53" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="478" height="438" rx="28" fill="url(#backdrop)" stroke="#E2DFE9"/>
+  <ellipse cx="245" cy="222" rx="181" ry="153" fill="#B4AEDC" opacity=".18"/>
+  <path d="M78 123C129 123 137 153 174 166s65-5 104-30 69-24 113-11M84 299c54 0 64-35 100-49s74 6 108 34 55 35 103 20" stroke="#9187C1" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 7" opacity=".8">
+    <animate attributeName="stroke-dashoffset" from="0" to="-96" dur="9s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="174" cy="166" r="5" fill="#8277B9" stroke="#fff" stroke-width="3"/>
+  <circle cx="292" cy="284" r="5" fill="#8277B9" stroke="#fff" stroke-width="3"/>
+
+  <g filter="url(#smallShadow)">
+    <rect x="24" y="49" width="186" height="100" rx="12" fill="#FFFEFA" stroke="#E4E1EB"/>
+    <path d="M24 78h186" stroke="#EEECF2"/>
+    <circle cx="40" cy="64" r="4" fill="#86B89A"/>
+    <text x="51" y="68" fill="#555268" font-family="monospace" font-size="10">logic.js</text>
+    <text x="177" y="68" fill="#69A07C" font-family="Arial,sans-serif" font-size="7" font-weight="700" letter-spacing="1">LIVE</text>
+    <text x="37" y="98" fill="#AAA7B5" font-family="monospace" font-size="8">01</text>
+    <text x="59" y="98" fill="#8376BD" font-family="monospace" font-size="9" font-weight="600">function</text>
+    <text x="111" y="98" fill="#555268" font-family="monospace" font-size="9"> buildApp()</text>
+    <text x="37" y="116" fill="#AAA7B5" font-family="monospace" font-size="8">02</text>
+    <text x="59" y="116" fill="#555268" font-family="monospace" font-size="9">return </text>
+    <text x="91" y="116" fill="#72A283" font-family="monospace" font-size="9">"ready"</text>
+    <text x="37" y="134" fill="#AAA7B5" font-family="monospace" font-size="8">03</text>
+    <rect x="59" y="126" width="2" height="10" rx="1" fill="#8376BD"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="5s" repeatCount="indefinite"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="91" y="124" width="306" height="262" rx="13" fill="url(#card)" stroke="#DCD9E6"/>
+    <path d="M91 164h306" stroke="#ECEAF1"/>
+    <rect x="107" y="137" width="20" height="20" rx="6" fill="#655BA8"/>
+    <text x="114" y="151" fill="#fff" font-family="Arial,sans-serif" font-size="11" font-weight="700">S</text>
+    <text x="136" y="151" fill="#454258" font-family="Arial,sans-serif" font-size="10" font-weight="700">Project overview</text>
+    <circle cx="375" cy="144" r="1.5" fill="#AAA7B5"/><circle cx="381" cy="144" r="1.5" fill="#AAA7B5"/><circle cx="387" cy="144" r="1.5" fill="#AAA7B5"/>
+    <path d="M127 164v222" stroke="#EEECF2"/>
+    <rect x="106" y="181" width="12" height="12" rx="4" fill="#8C82C4"/>
+    <rect x="106" y="210" width="12" height="12" rx="4" fill="#E3E0F1"/><rect x="106" y="239" width="12" height="12" rx="4" fill="#E3E0F1"/><rect x="106" y="268" width="12" height="12" rx="4" fill="#E3E0F1"/>
+    <text x="142" y="190" fill="#454258" font-family="Arial,sans-serif" font-size="11" font-weight="600">Good work, team</text>
+    <text x="142" y="204" fill="#9996A5" font-family="Arial,sans-serif" font-size="8">Your project is taking shape.</text>
+    <rect x="142" y="217" width="104" height="61" rx="7" fill="#fff" stroke="#EEEDF2"/>
+    <rect x="254" y="217" width="125" height="61" rx="7" fill="#fff" stroke="#EEEDF2"/>
+    <text x="152" y="232" fill="#9895A3" font-family="Arial,sans-serif" font-size="7">Progress</text>
+    <text x="152" y="250" fill="#49465F" font-family="Arial,sans-serif" font-size="14" font-weight="700">78%</text>
+    <rect x="152" y="260" width="83" height="4" rx="2" fill="#ECEAF3"/>
+    <rect x="152" y="260" width="65" height="4" rx="2" fill="#8C82C4"><animate attributeName="width" values="65;72;65" dur="3s" repeatCount="indefinite"/></rect>
+    <text x="264" y="232" fill="#9895A3" font-family="Arial,sans-serif" font-size="7">Tasks</text>
+    <text x="264" y="250" fill="#49465F" font-family="Arial,sans-serif" font-size="14" font-weight="700">12</text>
+    <g fill="#B7ADDD">
+      <rect x="348" y="251" width="4" height="12" rx="2"/><rect x="356" y="244" width="4" height="19" rx="2"/><rect x="364" y="248" width="4" height="15" rx="2"/><rect x="372" y="239" width="4" height="24" rx="2"/>
+    </g>
+    <path d="M143 296h235v48H143z" fill="#FAF9FC" stroke="#EEEDF2"/>
+    <path d="M153 333c14-2 16-17 29-13s16 8 29-3 16 1 29-7 18 9 29 3 17-16 30-12 19 5 29-5 20 4 39-8" stroke="#8C82C4" stroke-width="2" stroke-linecap="round"/>
+    <path d="M153 333c14-2 16-17 29-13s16 8 29-3 16 1 29-7 18 9 29 3 17-16 30-12 19 5 29-5 20 4 39-8" stroke="#8C82C4" stroke-width="5" stroke-linecap="round" opacity=".08">
+      <animate attributeName="opacity" values=".04;.18;.04" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <rect x="143" y="356" width="65" height="7" rx="3.5" fill="#EEEDF2"/><rect x="214" y="356" width="54" height="7" rx="3.5" fill="#EEEDF2"/><rect x="274" y="356" width="71" height="7" rx="3.5" fill="#EEEDF2"/>
+  </g>
+
+  <g filter="url(#smallShadow)">
+    <rect x="349" y="65" width="112" height="65" rx="11" fill="#FFFEFA" stroke="#E4E1EB"/>
+    <rect x="360" y="77" width="27" height="27" rx="8" fill="#E9E6F5"/>
+    <text x="365" y="94" fill="#7167AD" font-family="Arial,sans-serif" font-size="8" font-weight="700">API</text>
+    <text x="394" y="88" fill="#4C4961" font-family="Arial,sans-serif" font-size="9" font-weight="700">API</text>
+    <text x="394" y="101" fill="#9A97A5" font-family="Arial,sans-serif" font-size="7">connected</text>
+    <circle cx="449" cy="77" r="3" fill="#81BB91"><animate attributeName="opacity" values="1;.45;1" dur="2s" repeatCount="indefinite"/></circle>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="4s" repeatCount="indefinite"/>
+  </g>
+  <g filter="url(#smallShadow)">
+    <rect x="354" y="299" width="107" height="65" rx="11" fill="#FFFEFA" stroke="#E4E1EB"/>
+    <rect x="365" y="311" width="27" height="27" rx="8" fill="#E9E6F5"/>
+    <text x="371" y="328" fill="#7167AD" font-family="Arial,sans-serif" font-size="8" font-weight="700">DB</text>
+    <text x="400" y="322" fill="#4C4961" font-family="Arial,sans-serif" font-size="9" font-weight="700">Data</text>
+    <text x="400" y="335" fill="#9A97A5" font-family="Arial,sans-serif" font-size="7">in sync</text>
+    <circle cx="449" cy="311" r="3" fill="#81BB91"><animate attributeName="opacity" values="1;.45;1" dur="2s" repeatCount="indefinite"/></circle>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="4s" begin="-2s" repeatCount="indefinite"/>
+  </g>
+  <text x="240" y="419" text-anchor="middle" fill="#716F7B" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1.3">DESIGN  ·  BUILD  ·  IMPROVE</text>
+</svg>

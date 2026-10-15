@@ -215,33 +215,8 @@ function App() {
             </div>
           </section>
 
-          <section className="hero-visual" aria-label="Animated software workspace with connected app components">
-            <div className="flow-scene">
-              <svg className="flow-wires" viewBox="0 0 480 440" aria-hidden="true">
-                <path d="M82 122 C130 122 138 153 174 166 S239 161 278 136 S347 112 391 126" />
-                <path d="M88 297 C140 297 148 263 184 249 S258 255 292 283 S347 318 395 303" />
-                <circle cx="174" cy="166" r="4" /><circle cx="292" cy="283" r="4" />
-              </svg>
-              <div className="flow-panel panel-code">
-                <div className="flow-panel-head"><span className="panel-dot" /> logic.js <span className="panel-live">LIVE</span></div>
-                <div className="mini-code"><i>01</i><b>function</b> buildApp()<br /><i>02</i>&nbsp; return <em>"ready"</em><br /><i>03</i>{'}'} <span className="typing-caret" /></div>
-              </div>
-              <div className="flow-main">
-                <div className="flow-panel-head"><div className="brand-mark">S</div> Project overview <span className="menu-dots">•••</span></div>
-                <div className="dashboard-body">
-                  <div className="dash-sidebar"><span /><span /><span /><span /></div>
-                  <div className="dash-content">
-                    <div className="dash-welcome">Good work, <b>team</b><small>Your project is taking shape.</small></div>
-                    <div className="dash-stats"><div><small>Progress</small><b>78%</b><span className="progress-track"><i /></span></div><div><small>Tasks</small><b>12</b><span className="stat-bars"><i /><i /><i /><i /><i /><i /><i /></span></div></div>
-                    <div className="dash-chart"><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /></div>
-                    <div className="dash-bottom"><i /><i /><i /></div>
-                  </div>
-                </div>
-              </div>
-              <div className="flow-node node-api"><span className="node-icon">API</span><b>API</b><small>connected</small><i /></div>
-              <div className="flow-node node-data"><span className="node-icon">DB</span><b>Data</b><small>in sync</small><i /></div>
-              <span className="flow-note">Design · Build · Improve</span>
-            </div>
+          <section className="hero-visual" aria-label="Animated software workspace">
+            <img className="hero-workspace-image" src="/assets/software-workspace.svg" alt="Animated project dashboard connected to code, API, and data panels" />
           </section>
         </header>
 
