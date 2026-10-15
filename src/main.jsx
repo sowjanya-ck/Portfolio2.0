@@ -216,7 +216,7 @@ function App() {
           </section>
 
           <section className="hero-visual" aria-label="Animated software workspace">
-            <img className="hero-workspace-image" src="/assets/software-workspace.svg" alt="Animated project dashboard connected to code, API, and data panels" />
+            <img className="hero-workspace-image" src="/assets/software-workspace.svg" alt="Animated illustration of a developer seated at a desk, typing on a laptop" />
           </section>
         </header>
 
